@@ -14,7 +14,7 @@ WORKDIR /usr/src/app
 COPY --from=build /usr/src/app/node_modules ./node_modules
 COPY --from=build /usr/src/app/package*.json ./
 COPY --from=build /usr/src/app/src ./src
-COPY --from=build /usr/src/app/index.js .
+COPY --from=build /usr/src/app/src/index.js .
 
 EXPOSE 3001
 CMD ["node", "index.js"]
