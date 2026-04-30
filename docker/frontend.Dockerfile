@@ -11,7 +11,7 @@ COPY frontend/package*.json ./
 RUN npm install
 
 # Copy the rest of the application's code
-COPY frontend/ ./
+COPY . ./
 
 # Make port 5173 available to the world outside this container
 # This is the default port for Vite
