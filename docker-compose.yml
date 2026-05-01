@@ -14,8 +14,8 @@ services:
 
   backend:
     build:
-      context: .
-      dockerfile: docker/backend.Dockerfile
+      context: ./backend
+      dockerfile: ../docker/backend.Dockerfile
     container_name: taskflow_backend
     ports:
       - "3001:3001"
@@ -29,13 +29,14 @@ services:
 
   frontend:
     build:
-      context: .
-      dockerfile: docker/frontend.Dockerfile
+      context: ./frontend
+      dockerfile: ../docker/frontend.Dockerfile
     container_name: taskflow_frontend
     ports:
       - "5173:5173"
     volumes:
       - ./frontend:/usr/src/app
+      - /usr/src/app/node_modules
     depends_on:
       - backend
     restart: unless-stopped
