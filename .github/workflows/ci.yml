@@ -3,7 +3,12 @@ name: CI
 on:
   push:
     branches:
-      - feature/add-ci-cd
+      - main
+      - feature/*
+  pull_request:
+    branches:
+      - main
+      - feature/*
 
 jobs:
   build:
