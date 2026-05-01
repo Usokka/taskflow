@@ -5,13 +5,13 @@ FROM node:20-alpine
 WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json (or yarn.lock)
-COPY frontend/package*.json ./
+COPY package*.json ./
 
 # Install dependencies
 RUN npm install
 
 # Copy the rest of the application's code
-COPY frontend/ ./
+COPY . ./
 
 # Make port 5173 available to the world outside this container
 # This is the default port for Vite
